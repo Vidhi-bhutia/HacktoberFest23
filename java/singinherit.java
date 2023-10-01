@@ -33,8 +33,8 @@ class singinherit{
         age=sc.nextInt();
         System.out.println("Enter the rollno");
         rollno=sc.nextInt();
-        student s=new student(name,age,rollno);
-        s.display();
+        student s1=new student(name,age,rollno);
+        s1.display();
     }
     
 
