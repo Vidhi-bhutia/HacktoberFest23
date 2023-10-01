@@ -1,0 +1,26 @@
+name: Auto-Merge PR
+
+on:
+  pull_request:
+    types:
+      - opened
+      - synchronize
+
+jobs:
+  auto_merge:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check PR Label
+        id: pr_label
+        run: echo "::set-output name=label::${{ github.event.pull_request.labels.*.name }}"
+
+      - name: Merge PR
+        if: contains(steps.pr_label.outputs.label, 'merge-me')
+        run: |
+          TOKEN=${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER=${{ github.event.pull_request.number }}
+          REPO=${{ github.repository }}
+
+          curl -X PUT "https://api.github.com/repos/$REPO/pulls/$PR_NUMBER/merge" \
+            -H "Authorization: Bearer $TOKEN"
