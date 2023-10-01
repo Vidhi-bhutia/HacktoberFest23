@@ -1,4 +1,4 @@
-import java.util.Scanner;
+import java.util.*;
 
 public class Sum_of_squares {
     void square(int arr[]) {
