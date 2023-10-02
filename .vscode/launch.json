@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "MyClass",
+            "request": "launch",
+            "mainClass": "MyClass",
+            "projectName": "HacktoberFest23_3b429c4c"
+        },
+        {
+            "type": "java",
             "name": "LongestSubarraySum",
             "request": "launch",
             "mainClass": "LongestSubarraySum",
