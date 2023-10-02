@@ -19,7 +19,4 @@ class ReverseLetterOnly_Leetcodeq917 {
         return new String(chars);
     }
 }
-//"ab-cd"
-
-//Test1ng-Leet=code-Q!
-//
+//Double pointer approch 
